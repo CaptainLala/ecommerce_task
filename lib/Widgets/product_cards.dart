@@ -18,7 +18,7 @@ class _ProductCardState extends State<ProductCard> {
   Widget build(BuildContext context) {
     final snackBar = SnackBar(
       duration: const Duration(
-        seconds: 2,
+        seconds: 1,
       ),
       backgroundColor: Theme.of(context).primaryColor,
       content: const Text(
