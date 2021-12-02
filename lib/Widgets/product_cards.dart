@@ -17,9 +17,6 @@ class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
     final snackBar = SnackBar(
-      duration: const Duration(
-        seconds: 1,
-      ),
       backgroundColor: Theme.of(context).primaryColor,
       content: const Text(
         'Item added to cart!',
@@ -126,6 +123,7 @@ class _ProductCardState extends State<ProductCard> {
                       onPressed: () {
                         setState(() {
                           ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
                           cart.addCartItem(
                             product.id,
                             product.title,
@@ -209,8 +207,6 @@ class _ProductCardState extends State<ProductCard> {
                           ),
                           InkWell(
                             onTap: () {
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(snackBar);
                               cart.addCartItem(
                                 product.id,
                                 product.title,
