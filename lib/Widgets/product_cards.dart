@@ -32,7 +32,7 @@ class _ProductCardState extends State<ProductCard> {
         textColor: Colors.amberAccent,
         label: 'Go to your cart',
         onPressed: () {
-          Navigator.pushReplacementNamed(
+          Navigator.pushNamed(
             context,
             CartPage.routeName,
           );
