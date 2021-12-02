@@ -1,3 +1,4 @@
+import 'package:ecommerce_task/Screens/cart_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +16,29 @@ class _ProductCardState extends State<ProductCard> {
   bool add = true;
   @override
   Widget build(BuildContext context) {
+    final snackBar = SnackBar(
+      duration: const Duration(
+        seconds: 1,
+      ),
+      backgroundColor: Theme.of(context).primaryColor,
+      content: const Text(
+        'Item added to cart!',
+        style: TextStyle(
+          fontSize: 15,
+          color: Colors.white,
+        ),
+      ),
+      action: SnackBarAction(
+        textColor: Colors.amberAccent,
+        label: 'Go to your cart',
+        onPressed: () {
+          Navigator.pushReplacementNamed(
+            context,
+            CartPage.routeName,
+          );
+        },
+      ),
+    );
     final product = Provider.of<Product>(context);
     final cart = Provider.of<CartItems>(context);
     return Container(
@@ -101,6 +125,7 @@ class _ProductCardState extends State<ProductCard> {
                     child: ElevatedButton(
                       onPressed: () {
                         setState(() {
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
                           cart.addCartItem(
                             product.id,
                             product.title,
@@ -132,7 +157,7 @@ class _ProductCardState extends State<ProductCard> {
                   ),
                   child: Center(
                     child: Container(
-                      width: 90,
+                      width: 100,
                       padding: const EdgeInsets.all(3),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
@@ -154,11 +179,11 @@ class _ProductCardState extends State<ProductCard> {
                             child: const Icon(
                               Icons.remove,
                               color: Colors.white,
-                              size: 25,
+                              size: 28,
                             ),
                           ),
                           Container(
-                            width: 25,
+                            width: 28,
                             height: 20,
                             margin: const EdgeInsets.symmetric(
                               horizontal: 3,
@@ -184,6 +209,8 @@ class _ProductCardState extends State<ProductCard> {
                           ),
                           InkWell(
                             onTap: () {
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
                               cart.addCartItem(
                                 product.id,
                                 product.title,
@@ -194,7 +221,7 @@ class _ProductCardState extends State<ProductCard> {
                             child: const Icon(
                               Icons.add,
                               color: Colors.white,
-                              size: 25,
+                              size: 28,
                             ),
                           ),
                         ],
