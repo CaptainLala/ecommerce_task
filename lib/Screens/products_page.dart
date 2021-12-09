@@ -37,7 +37,7 @@ class _ProductsPageState extends State<ProductsPage> {
           padding: const EdgeInsets.all(5),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             childAspectRatio: MediaQuery.of(context).size.width /
-                (MediaQuery.of(context).size.height * 0.6),
+                (MediaQuery.of(context).size.height / 1.6),
             crossAxisCount: 2,
             crossAxisSpacing: 5.0,
             mainAxisSpacing: 5.0,

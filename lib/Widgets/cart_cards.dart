@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../Providers/cart_items.dart';
+import '../Providers/cart_item.dart';
 
 class CartCard extends StatefulWidget {
   final CartItem cartItem;

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './category.dart';
+import './store.dart';
 
 class Stores with ChangeNotifier {
   final List<Store> _stores = [
@@ -41,28 +43,4 @@ class Stores with ChangeNotifier {
   Store findById(String id) {
     return _stores.firstWhere((store) => store.id == id);
   }
-}
-
-class Store {
-  final String id;
-  final String name;
-  final String image;
-  final List<String> coverImages;
-  final List<Category> categories;
-  Store({
-    required this.coverImages,
-    required this.image,
-    required this.id,
-    required this.name,
-    required this.categories,
-  });
-}
-
-class Category {
-  final String id;
-  final String name;
-  Category({
-    required this.id,
-    required this.name,
-  });
 }

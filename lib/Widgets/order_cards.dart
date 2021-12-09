@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../Providers/orders.dart';
+import '../Providers/order.dart';
 
 import '../Screens/invoice_page.dart';
 

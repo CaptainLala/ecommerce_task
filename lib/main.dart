@@ -14,8 +14,6 @@ import './Screens/feedback_page.dart';
 import './Screens/profile_page.dart';
 import './Screens/invoice_page.dart';
 import './Screens/store_page.dart';
-
-import './Providers/categories.dart';
 import './Providers/products.dart';
 import './Providers/orders.dart';
 import './Providers/cart_items.dart';
@@ -33,9 +31,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (context) => Categories(),
-        ),
         ChangeNotifierProvider(
           create: (context) => Products(),
         ),

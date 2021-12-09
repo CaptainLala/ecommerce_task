@@ -25,9 +25,6 @@ class MyOrdersPage extends StatelessWidget {
           ),
         ),
       ),
-      drawer: const Drawer(
-        child: SideMenu(),
-      ),
       body: orders.isNotEmpty
           ? ListView.builder(
               itemCount: orders.length,

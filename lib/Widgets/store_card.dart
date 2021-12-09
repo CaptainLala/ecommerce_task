@@ -1,4 +1,4 @@
-import 'package:ecommerce_task/Providers/stores.dart';
+import 'package:ecommerce_task/Providers/store.dart';
 import 'package:ecommerce_task/Screens/store_page.dart';
 import 'package:flutter/material.dart';
 

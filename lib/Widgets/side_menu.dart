@@ -142,7 +142,7 @@ class SideMenu extends StatelessWidget {
           title: 'My Orders',
           icon: Icons.shopping_bag,
           pressed: () {
-            Navigator.pushReplacementNamed(context, MyOrdersPage.routeName);
+            Navigator.pushNamed(context, MyOrdersPage.routeName);
           },
         ),
         Divider(

@@ -1,6 +1,6 @@
 import 'package:ecommerce_task/Screens/products_page.dart';
 import 'package:flutter/material.dart';
-import '../Providers/stores.dart';
+import '../Providers/category.dart';
 
 class CategoryCard extends StatelessWidget {
   final Category category;

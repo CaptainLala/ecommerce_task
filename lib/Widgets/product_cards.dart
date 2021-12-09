@@ -2,7 +2,7 @@ import 'package:ecommerce_task/Screens/cart_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../Providers/products.dart';
+import '../Providers/product.dart';
 import '../Providers/cart_items.dart';
 
 class ProductCard extends StatefulWidget {
@@ -12,11 +12,15 @@ class ProductCard extends StatefulWidget {
   _ProductCardState createState() => _ProductCardState();
 }
 
-class _ProductCardState extends State<ProductCard> {
+class _ProductCardState extends State<ProductCard>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
   bool add = true;
   @override
   Widget build(BuildContext context) {
     final snackBar = SnackBar(
+      duration: const Duration(seconds: 3),
       backgroundColor: Theme.of(context).primaryColor,
       content: const Text(
         'Item added to cart!',
@@ -122,7 +126,9 @@ class _ProductCardState extends State<ProductCard> {
                     child: ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                          ScaffoldMessenger.of(context)
+                            ..removeCurrentSnackBar()
+                            ..showSnackBar(snackBar);
 
                           cart.addCartItem(
                             product.id,

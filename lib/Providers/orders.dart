@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './cart_items.dart';
+import './order.dart';
+import './cart_item.dart';
 
 class Orders with ChangeNotifier {
   final List<Order> _orders = [];
@@ -28,19 +29,4 @@ class Orders with ChangeNotifier {
   Order findById(String id) {
     return _orders.firstWhere((order) => order.id == id);
   }
-}
-
-class Order with ChangeNotifier {
-  final String id;
-  final String status;
-  final double amount;
-  final List<CartItem> products;
-  final DateTime dateTime;
-  Order({
-    required this.id,
-    required this.status,
-    required this.amount,
-    required this.products,
-    required this.dateTime,
-  });
 }
